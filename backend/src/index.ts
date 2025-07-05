@@ -10,6 +10,7 @@ import noteRoutes from './routes/notes';
 // Load environment variables
 dotenv.config();
 
+
 const app = express();
 const PORT = process.env.PORT || 5001;
 
