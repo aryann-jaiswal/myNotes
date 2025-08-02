@@ -200,19 +200,45 @@ npm test           # Run tests
 
 ## Deployment
 
-### Backend Deployment (Render/Railway)
+### Backend Deployment (Vercel)
 
 1. Push code to GitHub
-2. Connect repository to Render/Railway
-3. Set environment variables
-4. Deploy
+2. Connect repository to Vercel
+3. Set environment variables:
+   - `MONGODB_URI`: Your MongoDB Atlas connection string
+   - `JWT_SECRET`: A secure random string for JWT signing
+   - `FRONTEND_URL`: Your frontend URL (e.g., `https://your-frontend.vercel.app`)
+   - `NODE_ENV`: `production`
+4. Configure MongoDB Atlas:
+   - Go to Network Access
+   - Add "Allow Access from Anywhere" (`0.0.0.0/0`)
+5. Deploy
 
 ### Frontend Deployment (Vercel)
 
 1. Push code to GitHub
 2. Connect repository to Vercel
-3. Set build command: `npm run build`
-4. Deploy
+3. Set environment variables:
+   - `REACT_APP_API_URL`: Your backend URL (e.g., `https://your-backend.vercel.app`)
+4. Set build command: `npm run build`
+5. Deploy
+
+### Environment Variables Summary
+
+**Backend (Vercel):**
+
+```env
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/mynotes?retryWrites=true&w=majority
+JWT_SECRET=your-secure-jwt-secret
+FRONTEND_URL=https://your-frontend.vercel.app
+NODE_ENV=production
+```
+
+**Frontend (Vercel):**
+
+```env
+REACT_APP_API_URL=https://your-backend.vercel.app
+```
 
 ## Security Features
 
