@@ -22,7 +22,11 @@ app.use(helmet());
 
 // CORS configuration
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: [
+    process.env.FRONTEND_URL || 'http://localhost:3000',
+    'https://my-notes-79ao.vercel.app',
+    'https://frontend-gy6qoaycv-aryan-jaiswals-projects-1f94d4fa.vercel.app'
+  ],
   credentials: true
 }));
 
